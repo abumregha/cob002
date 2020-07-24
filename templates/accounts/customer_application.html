@@ -1,0 +1,16 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="container">
+<h2>Bank Account Application</h2>
+    <div>
+        <img   style="height: 200px; width: 200px;" src="{{request.user.newaccountdata.Personal_pic.url}}">
+    </div><br>
+<div class="container">
+<form enctype="multipart/form-data" action="" method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+        <input type="submit" value="Submit" name="_submit" class="btn btn-secondary">
+        <input type="submit" value="Save for later" name="_save" class="btn btn-secondary">
+</form>
+</div>
+{%endblock%}

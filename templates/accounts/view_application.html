@@ -1,0 +1,42 @@
+{%extends 'main.html'%}
+{%block content%}
+<div id="application" class="container-fluid">
+
+
+
+<div>
+<h4>Application status: {{customer_application.status}}</h4><br><br>
+</div>
+    <div class="media">
+        <img style="height: 200px; width: 200px;" src="{{customer_application.Personal_pic.url}}">
+    <div class="media-body">
+
+<div class="container-fluid">
+
+    <h4> Full Name Arabic: {{customer_application.First_Name_Arabic}} {{customer_application.Middle_Name_Arabic}} {{customer_application.Last_Name_Arabic}}</h4>
+    <h4>Full Name English: {{customer_application.First_Name_English}} {{customer_application.Middle_Name_English}} {{customer_application.Last_Name_English}}</h4>
+    <h4>Birth Date: {{customer_application.Birth_dt}}</h4>
+    <h4>Place Of Birth :{{customer_application.PlaceOFBirth}}</h4>
+    <h4>Gender: {{customer_application.Gender}}</h4>
+    <h4>Martial Status: {{customer_application.MartialStatus}}</h4>
+    <h4>Home Address: {{customer_application.Home_Address}}</h4>
+    <h4>City :{{customer_application.City}}</h4>
+    <h4>Country: {{customer_application.Country}}</h4>
+    <h4>Nationality: {{customer_application.Nationality}}</h4>
+    <h4>{{customer_application.CountryOfBirth}}</h4>
+    <h4>{{customer_application.PhoneNumber1}}</h4>
+    <h4>{{customer_application.PhoneNumber2}}</h4>
+    <h4>{{customer_application.PassportNo}}</h4>
+
+    <h4>{{customer_application.PassportIssueDate}}</h4>
+
+    <h4>{{customer_application.PassportExpiryDate}}</h4>
+
+    <h4>{{customer_application.PassportIssueAuthority}}</h4>
+    <h4>{{customer_application.Nid}}</h4>
+    <a class="btn btn-sm btn-info" href="{% url 'save_to_pdf' customer_application.id %}">Print As PDF</a>
+    <button id="cmd" onclick="ExportPdf()" class="btn btn-sm btn-info" >Home</button>
+</div>
+</div>
+</div>
+{% endblock %}

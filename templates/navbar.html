@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!--  <img style="size:40px" src="https://doxim-wpengine.netdna-ssl.com/wp-content/uploads/2016/10/Personalized-Welcome-Kits.png">-->
+    <a class="navbar-brand" href="{% url 'user-page' %}">COB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      {% if request.user.is_staff%}
+      <a class="nav-item nav-link active" href="{% url 'home' %}">Dashboard </a>
+      <a class="nav-item nav-link" href="#">Account</a>
+      {%endif%}
+    </div>
+  </div>
+  <span style="color:white;">Hello {{request.user}}</span>
+  <a style="color:white;" href="{%url 'logout' %}">Logout</a>
+</nav>
+<hr>

@@ -1,0 +1,35 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="container">
+<h2>Hello {{customer.name}}</h2>
+        <a type="submit" class="btn btn-sm btn-info" href="{% url 'apply_for_account'%}">Apply for a bank Account</a>
+</div>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>EmployerName</th>
+					<th>Position</th>
+					<th>EmployerSector</th>
+					<th>Application Date</th>
+					<th>Salary</th>
+                     <th>Status</th>
+
+				</tr>
+
+				{% for customer_application in customer_application %}
+
+				<tr>
+					<td>{{customer_application.EmployerName}}</td>
+					<td>{{customer_application.Position}}</td>
+					<td>{{customer_application.EmployerSector}}</td>
+					<td>{{customer_application.date_Created}}</td>
+					<td>{{customer_application.Salary}}</td>
+                     <td>{{customer_application.status}}</td>
+
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+{%endblock%}
+

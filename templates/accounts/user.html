@@ -1,0 +1,19 @@
+{%extends 'main.html'%}
+{%block content%}
+<div class="container">
+<h2>Hello {{user.username}}</h2>
+        {%if application_status == 'not Started'%}
+        <a type="submit" class="btn btn-sm btn-info" href="{% url 'apply_for_account'%}">Apply for a bank Account</a>
+        {%endif%}
+        {%if application_status == 'Submitted'%}
+        <a type="submit" class="btn btn-sm btn-info" href="{% url 'customer_application'%}">View your Application </a>
+        {%endif%}
+        {%if application_status == 'Unfinished'%}
+        <a type="submit" class="btn btn-sm btn-info" href="{% url 'customer_application'%}">finish your Application </a>
+        {%endif%}
+</div>
+
+</div>
+<h2>your Application status: {{application_status}}</h2>
+</div>
+{% endblock %}
